@@ -1,0 +1,275 @@
+{
+  "interactionModel": {
+    "languageModel": {
+      "invocationName": "collect it",
+      "intents": [
+        {
+          "name": "AMAZON.NavigateHomeIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.CancelIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.HelpIntent",
+          "samples": []
+        },
+        {
+          "name": "AMAZON.StopIntent",
+          "samples": []
+        },
+        {
+          "name": "factIntent",
+          "slots": [
+            {
+              "name": "city",
+              "type": "cityName",
+              "samples": [
+                "{query} "
+              ]
+            },
+            {
+              "name": "query",
+              "type": "AMAZON.SearchQuery",
+              "samples": [
+                "{query}"
+              ]
+            },
+            {
+              "name": "input",
+              "type": "input",
+              "samples": [
+                "{query}"
+              ]
+            }
+          ],
+          "samples": [
+            " {query}",
+            "We {query}",
+            "They {query}",
+            "I {query}",
+            "are {query}",
+            "he {query}",
+            "she {query}",
+            "it {query}",
+            "Good {query}",
+            "New York {query}",
+            "London {query}",
+            "The {query}",
+            "tell me about {query}",
+            "get me a fact for {query}",
+            "tell me a fact {query}",
+            "tell me a fact about  {query}"
+          ]
+        },
+        {
+          "name": "TestIntent",
+          "slots": [
+            {
+              "name": "lookup",
+              "type": "AMAZON.SearchQuery"
+            }
+          ],
+          "samples": [
+            "My {lookup}"
+          ]
+        }
+      ],
+      "types": [
+        {
+          "values": [
+            {
+              "name": {
+                "value": "maximum minimum number"
+              }
+            },
+            {
+              "name": {
+                "value": "Maximum number"
+              }
+            },
+            {
+              "name": {
+                "value": "the following table illustrates some example slot type values and how they are converted to written form when provided to your service"
+              }
+            },
+            {
+              "name": {
+                "value": "paris"
+              }
+            },
+            {
+              "name": {
+                "value": "toronto"
+              }
+            },
+            {
+              "name": {
+                "value": "sydney"
+              }
+            },
+            {
+              "name": {
+                "value": "london"
+              }
+            },
+            {
+              "name": {
+                "value": "new delhi",
+                "synonyms": [
+                  "delhi"
+                ]
+              }
+            }
+          ],
+          "name": "cityName"
+        },
+        {
+          "values": [
+            {
+              "name": {
+                "value": "input input"
+              }
+            },
+            {
+              "name": {
+                "value": "input"
+              }
+            }
+          ],
+          "name": "input"
+        }
+      ]
+    },
+    "dialog": {
+      "intents": [
+        {
+          "name": "factIntent",
+          "confirmationRequired": false,
+          "prompts": {},
+          "slots": [
+            {
+              "name": "city",
+              "type": "cityName",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.561485512179.1530495175561"
+              }
+            },
+            {
+              "name": "query",
+              "type": "AMAZON.SearchQuery",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.1431142143486.1401486122237"
+              }
+            },
+            {
+              "name": "input",
+              "type": "input",
+              "elicitationRequired": true,
+              "confirmationRequired": false,
+              "prompts": {
+                "elicitation": "Elicit.Slot.281573999311.835594416350"
+              }
+            }
+          ]
+        }
+      ],
+      "delegationStrategy": "SKILL_RESPONSE"
+    },
+    "prompts": [
+      {
+        "id": "Elicit.Slot.1162780729786.1432530920282",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which city are you going to?"
+          },
+          {
+            "type": "PlainText",
+            "value": "Where are you going?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1162780729786.1143025724798",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "where are you starting your trip?"
+          },
+          {
+            "type": "PlainText",
+            "value": "What city are you leaving from?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1162780729786.801508773141",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "what date are you flying out?"
+          },
+          {
+            "type": "PlainText",
+            "value": "When will you start this trip?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.251925459829.983270759031",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which city do you want to know the fact about,  you can say london or paris or new delhi?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.1431142143486.1401486122237",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "which city do you want to know the fact about,  you can say london or paris or new delhi?"
+          },
+          {
+            "type": "PlainText",
+            "value": "which city do you want to know the fact about?"
+          },
+          {
+            "type": "PlainText",
+            "value": "How is your day?"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.561485512179.1530495175561",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How is your day?"
+          },
+          {
+            "type": "PlainText",
+            "value": "please wait while I am looking"
+          }
+        ]
+      },
+      {
+        "id": "Elicit.Slot.281573999311.835594416350",
+        "variations": [
+          {
+            "type": "PlainText",
+            "value": "How is your day?"
+          }
+        ]
+      }
+    ]
+  },
+  "version": "29"
+}
